@@ -9,7 +9,7 @@ We can divide SQLAlchemy architecture into 3 parts:
     - SQLAlchemy Core
     - DB API defined in PEP 249 of Python
 
-[SQLAlchemy Architecture](SQLAlchemy_Architecture.png.png)
+[SQLAlchemy Architecture](resources/SQLAlchemy_Architecture.png.png)
 
 ## Data modeling with SQLAlchemy
 
