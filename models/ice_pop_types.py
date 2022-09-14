@@ -4,8 +4,8 @@ from sqlalchemy.sql import func
 from models.model_base import ModelBase
 
 
-class PackingType(ModelBase):
-    __tablename__ = "packing_types"
+class IcePopType(ModelBase):
+    __tablename__ = "ice_pops_types"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
 
@@ -13,4 +13,4 @@ class PackingType(ModelBase):
     name = Column(String(length=45), unique=True, nullable=False)
 
     def __repr__(self) -> str:
-        return f'<Packing type: {self.name}>'
+        return f'<Ice pop type: {self.name}>'
