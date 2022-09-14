@@ -4,8 +4,8 @@ from sqlalchemy.sql import func
 from models.model_base import ModelBase
 
 
-class NutritionalAdditives(ModelBase):
-    __tablename__ = "nutritional_additives"
+class PackingType(ModelBase):
+    __tablename__ = "packing_types"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
 
@@ -14,5 +14,4 @@ class NutritionalAdditives(ModelBase):
     chemical_formula = Column(String(length=45), unique=True, nullable=False)
 
     def __repr__(self) -> str:
-        return f'<Nutritional additives: {self.name}>'
-
+        return f'<Packing type: {self.name}>'
