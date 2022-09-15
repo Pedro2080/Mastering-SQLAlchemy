@@ -1,8 +1,13 @@
+from typing import List
+
 from sqlalchemy import Column, Integer, String, DECIMAL, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 
 from sqlalchemy.sql import func
+
 from models.model_base import ModelBase
+from models.lote import Lote
+from association_table import invoices_lotes
 
 
 class Invoice(ModelBase):
@@ -18,5 +23,9 @@ class Invoice(ModelBase):
     seller_id = Column(Integer, ForeignKey("sellers.id"))
     seller = relationship("Seller", lazy="joined")
 
+    # One invoice has many lotes and a lote has one invoice
+
+    lotes: List[Lote] = relationship("Lote", secondary=invoices_lotes, backref="lote", lazy="dynamic")
+
     def __repr__(self) -> str:
-        return f'<Invoice: {self.name}>'
+        return f'<Invoice: {self.serial_number}>'
