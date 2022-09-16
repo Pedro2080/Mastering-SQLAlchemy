@@ -4,7 +4,7 @@ from sqlalchemy.sql import func
 from models.model_base import ModelBase
 
 
-class AditivoNutritivo(ModelBase):
+class Teste(ModelBase):
     __tablename__ = "testes"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
