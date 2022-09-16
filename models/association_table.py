@@ -22,7 +22,7 @@ ice_pop_ingredients = Table(
 
 # ice pop has many preservatives
 ice_pop_preservatives = Table(
-    "ice_pop_preservatives ",
+    "ice_pop_preservatives",
     ModelBase.metadata,
     Column("ice_pop_id", ForeignKey("ice_pops.id")),
     Column("preservative_id", ForeignKey("preservatives.id")),

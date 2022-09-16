@@ -24,7 +24,6 @@ class Invoice(ModelBase):
     seller = relationship("Seller", lazy="joined")
 
     # One invoice has many lotes and a lote has one invoice
-
     lotes: List[Lote] = relationship("Lote", secondary=invoices_lotes, backref="lote", lazy="dynamic")
 
     def __repr__(self) -> str:
